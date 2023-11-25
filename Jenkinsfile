@@ -3,8 +3,11 @@
 pipeline{
 
     agent any
-    ARTIFACTORY_ACCESS_TOKEN = credentials('jFrog-Access-token')
-    JFROG_PASSWORD = credentials('jFrog-password')
+    
+    environment{
+        ARTIFACTORY_ACCESS_TOKEN = credentials('jFrog-Access-token')
+        JFROG_PASSWORD = credentials('jFrog-password')
+    }
 
     parameters{
 
