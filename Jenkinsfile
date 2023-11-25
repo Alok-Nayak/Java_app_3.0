@@ -81,7 +81,7 @@ pipeline{
         stage('Upload to jFrog Artifactory'){
             when {expression{params.action == 'create'}}
                steps{
-                sh 'jf rt upload -url http://35.154.156.71:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_OKEN} target/*.jar stark-repo/'
+                sh 'jf rt upload -url http://35.154.156.71:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} target/*.jar stark-repo/'
             }
         }
 
